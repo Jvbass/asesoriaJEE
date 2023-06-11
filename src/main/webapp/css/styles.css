@@ -1,0 +1,19 @@
+.header-height{
+  height: 200px;
+}
+
+@media screen and (min-width:800px){
+
+  .header-height{
+     height: 450px;
+  }
+}
+
+.main {
+	min-height:75vh;
+}
+
+textarea {
+    resize: none;
+  	height:15rem;
+}
