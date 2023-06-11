@@ -65,7 +65,7 @@
                     </div>
 
                     <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-success">Enviar</button>
+                        <button type="submit" class="btn btn-danger">Enviar</button>
                     </div>
                 </form>
             </div>

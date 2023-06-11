@@ -61,7 +61,7 @@
                         />
                     </div>
                     <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-success">Registrar</button>
+                        <button type="submit" class="btn btn-danger">Crear</button>
                     </div>
                 </form>
             </div>
