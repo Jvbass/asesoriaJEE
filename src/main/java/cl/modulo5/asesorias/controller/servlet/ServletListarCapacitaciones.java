@@ -8,20 +8,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/ServletContacto")
-public class ServletContacto extends HttpServlet {
+@WebServlet("/ServletListarCapacitaciones")
+public class ServletListarCapacitaciones extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public ServletContacto() {
+    public ServletListarCapacitaciones() {
     }
-    
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Cookie[] cookies = request.getCookies();
 		
 		if (cookies!= null) {
 			for (Cookie cookie : cookies) {
 				if (cookie.getName().equals("credenciales")) {        
-					response.sendRedirect("contacto.jsp");
+					response.sendRedirect("listar-capacitaciones.jsp");
 					return;
 				} else {
 					request.getRequestDispatcher("login.jsp").forward(request, response);
@@ -30,4 +30,5 @@ public class ServletContacto extends HttpServlet {
 			}
 	}
 	}
+
 }

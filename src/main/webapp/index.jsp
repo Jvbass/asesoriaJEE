@@ -22,7 +22,7 @@
 		  </div>
 		  <div class="carousel-inner d-flex align-items-center header-height">
 		    <div class="carousel-item active">
-		      <img src="https://www.aiep.cl/dinamicas/carreras/vitrina/tecnico-en-prevencion-de-riesgos.jpg" class="d-block w-100" alt="prevencionistas">
+		      <img src="https://hse.software/wp-content/uploads/2021/05/Prevencion-de-Riesgos-Laborales-3.jpg" class="d-block w-100" alt="prevencionistas">
 		
 		    </div>
 		    <div class="carousel-item">
@@ -48,7 +48,7 @@
 	
 	<!-- main -->
 	
-	<div class="main container mt-5 mb-5" >
+	<div class="main-login container mt-5 mb-5" >
 	<div class="text-center mb-5">
 		<h1>Asesorias <span class="text-danger">JEE</span> </h1>
 		<p>Asesorias en prevención de riesgos nos preocupamos por tu seguridad. Confía en nuestra experiencia y protege tu entorno laboral.</p>
@@ -90,7 +90,8 @@
 
 
 <!-- jquery -->
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+	<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="js/script.js"></script>  -->
 	<!-- bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" ></script>

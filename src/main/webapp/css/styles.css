@@ -1,24 +1,25 @@
+
 .header-height{
   height: 200px;
-}
-
-@media screen and (min-width:800px){
-
-  .header-height{
-     height: 450px;
-  }
 }
 
 footer a {
 	text-decoration: none;
 	color:#ccc000;
 }
-
-.main {
-	min-height:75vh;
+.main-login{
+	min-height: 70vh;	
 }
 
 textarea {
     resize: none;
   	height:15rem;
+}
+
+
+@media screen and (min-width:800px){
+
+  .header-height{
+     height: 450px;
+  }
 }
