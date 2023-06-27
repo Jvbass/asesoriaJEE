@@ -9,9 +9,6 @@
 <title>AsesoriasJEE - Login</title>
 </head>
 <body>
-<!-- navbar -->
-<!--<jsp:include page="navbar.jsp" />-->
-<!-- /navbar -->
 
 	<!-- main -->
 	<div class="container main-login vh-100">

@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cl.modulo5.asesorias.controller.CapacitacionController;
+import cl.modulo5.asesorias.model.entity.Capacitacion;
 
 @WebServlet("/ServletCrearCapacitacion")
 public class ServletCrearCapacitacion extends HttpServlet {
@@ -29,7 +31,22 @@ public class ServletCrearCapacitacion extends HttpServlet {
 					return;
 				}
 			}
+		}
 	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	    System.out.println(request + "servlet crear capacitacion");
+	    CapacitacionController capacitacionController = new CapacitacionController();
+	    	    		
+	    String nombre = request.getParameter("nombre");
+	    String detalle = request.getParameter("detalle");
+
+	    
+	    System.out.println(nombre);
+	    Capacitacion capacitacion = new Capacitacion(0, nombre, detalle);
+	    
+		capacitacionController.saveCapacitacion(capacitacion);
+
 	}
 
 }

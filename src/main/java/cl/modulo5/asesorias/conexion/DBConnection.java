@@ -1,22 +1,24 @@
 package cl.modulo5.asesorias.conexion;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class DBConnection {
+
 	  private static final String DB = "asesoriajee";
 	  private static final String PORT = "3306";
 	  private static final String LOGIN = "adminasesoria";
 	  private static final String PASSWORD = "admin";
 	  private static final String URL_CONEXION = "jdbc:mysql://localhost:"+PORT+"/"+DB;
 	  
+	  // PATRON SINGLETON
 	  private static DBConnection instance = null;
 	  private Connection connection = null;
 	  
 	  private DBConnection() {
 	    try {
 	      
-	      Class.forName("com.mysql.cj.jdbc.Driver"); // utilizamos el driver o cargamos el driver
-	      // Class.forName("org.mariadb.jdbc.Driver");
+	      Class.forName("com.mysql.cj.jdbc.Driver");
 	      connection = DriverManager.getConnection(URL_CONEXION, LOGIN, PASSWORD);
 	      
 	      if(connection != null) {
@@ -55,3 +57,4 @@ public class DBConnection {
 	    connection = null;
 	  }
 	}
+

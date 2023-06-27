@@ -10,15 +10,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cl.modulo5.asesorias.controller.CapacitacionController;
+import cl.modulo5.asesorias.controller.UsuarioController;
 
-@WebServlet("/ServletListarCapacitaciones")
-public class ServletListarCapacitaciones extends HttpServlet {
 
+@WebServlet("/ServletListarUsuarios")
+public class ServletListarUsuarios extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-
-    public ServletListarCapacitaciones() {
+    public ServletListarUsuarios() {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -27,7 +26,7 @@ public class ServletListarCapacitaciones extends HttpServlet {
 		if (cookies!= null) {
 			for (Cookie cookie : cookies) {
 				if (cookie.getName().equals("credenciales")) {        
-					response.sendRedirect("listar-capacitaciones.jsp");
+					response.sendRedirect("listar-usuarios.jsp");
 					return;
 				} else {
 					request.getRequestDispatcher("login.jsp").forward(request, response);
@@ -39,14 +38,15 @@ public class ServletListarCapacitaciones extends HttpServlet {
 	
 	@Override
 	  protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      
-    	CapacitacionController capacitacionController = new CapacitacionController();
-     System.out.println("Servlet Capacitacion inside");
-     System.out.println(capacitacionController.findAllCapacitaciones());
-      
-      request.setAttribute("capacitaciones", capacitacionController.findAllCapacitaciones());
-      // reenviar esta informacion a un JSP
-      RequestDispatcher dispatcher = request.getRequestDispatcher("/listar-capacitaciones.jsp");
-      dispatcher.forward(request, response);
-    }
+    
+  	UsuarioController usuarioController = new UsuarioController();
+   System.out.println("Servlet usuario inside");
+   System.out.println(usuarioController.findAllUsuarios());
+    
+    request.setAttribute("usuarios", usuarioController.findAllUsuarios());
+    // reenviar esta informacion a un JSP
+    RequestDispatcher dispatcher = request.getRequestDispatcher("/listar-usuarios.jsp");
+    dispatcher.forward(request, response);
+  }
+
 }

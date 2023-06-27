@@ -1,46 +1,47 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="cl.modulo5.asesorias.model.entity.Capacitacion"%>
+<%@page import="cl.modulo5.asesorias.model.entity.Usuario"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"  rel="stylesheet">
-	 <!-- Font Awesome -->
-	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		    <!-- Font Awesome -->
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	 <!-- /Font Awesome -->
-	 <link rel="stylesheet" type="text/css" href="./css/styles.css">
-	<title>AsesoriasJEE - Listar Capacitaciones</title>
+	<link rel="stylesheet" type="text/css" href="./css/styles.css">
+	<title>AsesoriasJEE - Listar Usuarios</title>
 </head>
 <body>
  <!-- navbar -->
             <jsp:include page="navbar.jsp" />
 <!-- /navbar -->
 <!-- main -->
-    <div class="mt-5 main-login">
-        <h2 class="text-center">Listar Capacitaciones</h2>
+    <div class="container mt-5 main-login">
+        <h2 class="text-center">Listar Usuarios</h2>
         <hr class="bg-dark">
         <div class="row mt-5">
-            <div class="col-12 col-md-8 offset-md-2 p-3">
+            <div class="col-10 offset-1 col-md-8 offset-md-2 p-3">
             
 				<table class="table text-center">
-                    <thead class="bg-info text-light ">
+                    <thead class="bg-info text-light">
                       <tr>
                         <th scope="col">Nombre</th>
-                        <th scope="col">Detalle</th>
+                        <th scope="col">Tipo</th>
                         <th scope="col">Acciones</th>
                       </tr>
                     </thead>
+                    
                      <tbody class="table-group-divider">
                     <!-- el ciclo for recorremos la lista y pintamos en html con el metodo get de cada atributo -->
-                    <% List<Capacitacion> capacitaciones = (List<Capacitacion>)request.getAttribute("capacitaciones");
-                    	if(capacitaciones != null) {
-                    	  for(Capacitacion s: capacitaciones ) {
+                    <% List<Usuario> usuarios = (List<Usuario>)request.getAttribute("usuarios");
+                    	if(usuarios != null) {
+                    	  for(Usuario s: usuarios ) {
                     %>
                       <tr>
                         <td><%= s.getNombre()%></td>
-                        <td><%= s.getDetalle()%></td>
+                        <td><%= s.getTipo()%></td>
                         <td>
                          <a class="text-success" href="#"><i class="fa-solid fa-pen-to-square mx-3"></i></a>	 
                          
@@ -53,9 +54,6 @@
                      %>
                     </tbody>
 				</table>
-				<div>
-					<a class="btn btn-outline-success mt-3" href="ServletCrearCapacitacion">Nueva capacitacion</a>
-				</div>
 			</div>
 		</div>
 	</div>
