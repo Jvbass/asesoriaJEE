@@ -25,7 +25,7 @@
 		<hr class="bg-dark">
 		<div class="row mt-5">
 			<div class="col-10 offset-1 col-md-6 offset-md-3 p-3">
-				<form id="form-crear-capacitacion" autocomplete="off">
+				<form id="form-capacitacion" class="crear-capacitacion" autocomplete="off">
 					<div class="mb-4">
 					<label for="name" class="form-label">Nombre</label>
 						<input placeholder="minimo 8 caracteres, maximo 50" type="text" 

@@ -1,17 +1,5 @@
-$.validator.setDefaults( {
-    submitHandler: function () {
-		      crearCapacitacion();
-    }
- });
- 
- $.validator.setDefaults( {
-    submitHandler: function () {
-		      editarCapacitacion();
-    }
- });
-
 $(document).ready(function() {
-  $("#form-crear-capacitacion", "#form-editar-capacitacion").validate({
+  $("#form-capacitacion").validate({
     rules: {
       name: {
         required: true,
@@ -30,17 +18,21 @@ $(document).ready(function() {
         minlength: "El nombre debe tener al menos 8 caracteres",
         maxlength: "El nombre no puede exceder los 50 caracteres"
       },
-
       detail: {
         required: "Por favor, ingresa el detalle de la capacitación",
         minlength: "El detalle debe tener al menos 6 caracteres",
         maxlength: "El detalle no puede exceder los 50 caracteres"
       },
-     },
-  });
-  $("#date").datepicker();
-  
-  
+    },
+    
+      submitHandler: function(form) {
+       if ($(form).hasClass("crear-capacitacion")) {
+        crearCapacitacion();
+      } else if ($(form).hasClass("editar-capacitacion")) {
+        editarCapacitacion();
+      }
+    }
+  });  
 });
 
 function crearCapacitacion() {
@@ -61,13 +53,13 @@ function crearCapacitacion() {
      window.location.href="ServletListarCapacitaciones"
     }
   });
-  
 }
 
-function editarCapacitacion(option) {
-  let id = $("#name").val();
+function editarCapacitacion() {
+  let id = $("#id").val();
   let name = $("#name").val();
   let detail = $("#detail").val();
+  let option = $("#option").val();
     $.ajax({
     type: "POST",
     dataType: "html",

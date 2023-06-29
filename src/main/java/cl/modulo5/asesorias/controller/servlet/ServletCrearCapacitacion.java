@@ -38,7 +38,6 @@ public class ServletCrearCapacitacion extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	    System.out.println(request + "servlet crear capacitacion");
 	    CapacitacionController capacitacionController = new CapacitacionController();
 	    	    		
 	    String nombre = request.getParameter("nombre");

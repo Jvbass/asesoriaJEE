@@ -58,7 +58,8 @@ public class CapacitacionService {
 		    }
 		    return capacitaciones;
 		  }
-	  
+
+	  // retornamos capacitacion por id 
 	  public static Capacitacion findByIdCapacitacion(int id) {
 		    
 		  Capacitacion capacitacion = null;
@@ -84,6 +85,7 @@ public class CapacitacionService {
 		    return capacitacion;
 		  }
 
+	  //actualizamos capacitacion
 	  public static Capacitacion updateCapacitacion(Capacitacion capacitacion) {
 		  String sql = "UPDATE capacitaciones SET nombre = ?, detalle = ? WHERE id = ?";
 		    

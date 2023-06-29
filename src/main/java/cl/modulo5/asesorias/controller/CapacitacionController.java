@@ -15,7 +15,6 @@ public class CapacitacionController implements ICapacitacionController {
 
 	@Override
 	public Capacitacion saveCapacitacion(Capacitacion capacitacion) {
-		System.out.println(capacitacion+ "desde capacitacion controller");
 		return CapacitacionService.saveCapacitacion(capacitacion);
 	}
 
