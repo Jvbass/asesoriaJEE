@@ -27,13 +27,11 @@ public class CapacitacionController implements ICapacitacionController {
 
 	@Override
 	public Capacitacion updateCapacitacion(Capacitacion capacitacion) {
-		// TODO Auto-generated method stub
-		return null;
+	    return CapacitacionService.updateCapacitacion(capacitacion);
 	}
 
 	@Override
 	public Capacitacion findByIdCapacitacion(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return CapacitacionService.findByIdCapacitacion(id);
 	}	
 }

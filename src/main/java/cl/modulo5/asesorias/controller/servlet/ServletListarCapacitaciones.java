@@ -41,11 +41,11 @@ public class ServletListarCapacitaciones extends HttpServlet {
 	  protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
       
     	CapacitacionController capacitacionController = new CapacitacionController();
-     System.out.println("Servlet Capacitacion inside");
+     System.out.println("estamos en Servlet lsitar capacitacion ");
      System.out.println(capacitacionController.findAllCapacitaciones());
       
       request.setAttribute("capacitaciones", capacitacionController.findAllCapacitaciones());
-      // reenviar esta informacion a un JSP
+      //enviamos info a listar-capacitaciones.jsp
       RequestDispatcher dispatcher = request.getRequestDispatcher("/listar-capacitaciones.jsp");
       dispatcher.forward(request, response);
     }

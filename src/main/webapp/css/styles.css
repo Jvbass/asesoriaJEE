@@ -11,6 +11,10 @@ footer a {
 	min-height: 70vh;	
 }
 
+.main-form{
+	min-height: 100vh;	
+}
+
 textarea {
     resize: none;
   	height:15rem;

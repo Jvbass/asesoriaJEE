@@ -40,7 +40,7 @@ public class ServletListarUsuarios extends HttpServlet {
 	  protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     
   	UsuarioController usuarioController = new UsuarioController();
-   System.out.println("Servlet usuario inside");
+   System.out.println("estamos en Servlet listar users");
    System.out.println(usuarioController.findAllUsuarios());
     
     request.setAttribute("usuarios", usuarioController.findAllUsuarios());

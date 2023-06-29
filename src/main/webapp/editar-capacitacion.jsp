@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="/resources/demos/style.css">
 
 <link rel="stylesheet" type="text/css" href="./css/styles.css">
-<title>AsesoriasJEE - Crear capacitacion</title>
+<title>AsesoriasJEE - Editar capacitacion</title>
 </head>
 <body>
 	<!-- navbar -->
@@ -21,12 +21,21 @@
 	<!-- /navbar -->
 	<!-- main -->		
 	<div class="main-login container mt-5">
-		<h2 class="text-center">Crear capacitacion</h2>
+		<h2 class="text-center">Editar capacitacion</h2>
 		<hr class="bg-dark">
 		<div class="row mt-5">
 			<div class="col-10 offset-1 col-md-6 offset-md-3 p-3">
-				<form id="form-crear-capacitacion" autocomplete="off">
+				<form action="ServletCrudCapacitaciones" autocomplete="off">
 					<div class="mb-4">
+					<input
+                            type="hidden"
+                            class="form-control"
+                            id="id"
+                            name="id"
+                            value="${capacitacion.id}"
+                            required
+                            readonly
+                        />
 					<label for="name" class="form-label">Nombre</label>
 						<input placeholder="minimo 8 caracteres, maximo 50" type="text" 
 						class="form-control" 
@@ -42,9 +51,10 @@
 						value="${capacitacion.detalle}"
 						name="detail" />
 					</div>
-
+					<!-- Input escondido que indica el valor option para que entre al case updateCapacitacion -->
+					<input type="hidden" name="option" value="updateCapacitacion">
 					<div class="d-grid gap-2">
-						<button type="submit" class="btn btn-danger">Crear</button>
+						<button type="submit" class="btn btn-danger">Editar</button>
 					</div>
 				</form>
 			</div>

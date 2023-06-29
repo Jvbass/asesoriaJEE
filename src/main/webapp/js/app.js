@@ -10,25 +10,25 @@ $(document).ready(function() {
       name: {
         required: true,
         minlength: 8,
-        maxlength: 100
+        maxlength: 50
       },
       detail: {
         required: true,
         minlength: 6,
-        maxlength: 500
+        maxlength: 50
       },
     },
     messages: {
       name: {
         required: "Por favor, ingresa nombre de la capacitacion",
         minlength: "El nombre debe tener al menos 8 caracteres",
-        maxlength: "El nombre no puede exceder los 100 caracteres"
+        maxlength: "El nombre no puede exceder los 50 caracteres"
       },
 
       detail: {
         required: "Por favor, ingresa el detalle de la capacitación",
         minlength: "El detalle debe tener al menos 6 caracteres",
-        maxlength: "El detalle no puede exceder los 500 caracteres"
+        maxlength: "El detalle no puede exceder los 50 caracteres"
       },
      },
   });

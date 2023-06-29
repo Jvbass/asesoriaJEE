@@ -23,10 +23,12 @@ public class UsuarioService {
 		      ResultSet rs = statement.executeQuery();
 		      
 		      while(rs.next()) {
-		        int id = rs.getInt("id");
+		        int rut = rs.getInt("rut");
 		        String nombre = rs.getString("nombre");
+		        String apellido = rs.getString("apellido");
+		        String contrasena = rs.getString("contrasena");
 		        String tipo = rs.getString("tipo");
-		        Usuario usuario = new Usuario(id, nombre, tipo);
+		        Usuario usuario = new Usuario(rut, nombre, apellido,contrasena,tipo);
 		        capacitaciones.add(usuario);
 		      }
 		      

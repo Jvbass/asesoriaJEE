@@ -42,7 +42,7 @@
                         <td><%= s.getNombre()%></td>
                         <td><%= s.getDetalle()%></td>
                         <td>
-                         <a class="text-success" href="#"><i class="fa-solid fa-pen-to-square mx-3"></i></a>	 
+                         <a class="text-success" href="ServletCrudCapacitaciones?option=formUpdateCapacitacion&idCapacitacion=<%=s.getId()%>"><i class="fa-solid fa-pen-to-square mx-3"></i></a>	 
                          
  						 <a class="text-danger" href="#"><i class="fa-solid fa-trash"></i></a>
                         </td>
