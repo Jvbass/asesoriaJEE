@@ -16,18 +16,21 @@ public class ServletContacto extends HttpServlet {
     }
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Cookie[] cookies = request.getCookies();
-		
-		if (cookies!= null) {
-			for (Cookie cookie : cookies) {
-				if (cookie.getName().equals("credenciales")) {        
-					response.sendRedirect("contacto.jsp");
-					return;
-				} else {
-					request.getRequestDispatcher("login.jsp").forward(request, response);
-					return;
-				}
-			}
-	}
+		 boolean cookieEncontrada = false;
+		 Cookie[] cookies = request.getCookies();
+
+		    if (cookies != null) {
+		        for (Cookie cookie : cookies) {
+		            if (cookie.getName().equals("credenciales")) {
+		                cookieEncontrada = true;
+		                break;
+		            }
+		        }
+		    }
+		    if (cookieEncontrada) {
+		    	response.sendRedirect("contacto.jsp");
+		    } else {
+		    request.getRequestDispatcher("login.jsp").forward(request, response);
+		    }
 	}
 }

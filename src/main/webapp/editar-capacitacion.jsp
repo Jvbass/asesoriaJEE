@@ -25,7 +25,7 @@
 		<hr class="bg-dark">
 		<div class="row mt-5">
 			<div class="col-10 offset-1 col-md-6 offset-md-3 p-3">
-				<form action="ServletCrudCapacitaciones" autocomplete="off">
+				<form id="form-editar-capacitacion" autocomplete="off">
 					<div class="mb-4">
 					<input
                             type="hidden"
@@ -51,7 +51,7 @@
 						value="${capacitacion.detalle}"
 						name="detail" />
 					</div>
-					<!-- Input escondido que indica el valor option para que entre al case updateCapacitacion -->
+					<!-- Input escondido que indica el valor option para que entre al case updateCapacitacion  -->
 					<input type="hidden" name="option" value="updateCapacitacion">
 					<div class="d-grid gap-2">
 						<button type="submit" class="btn btn-danger">Editar</button>

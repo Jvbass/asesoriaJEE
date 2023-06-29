@@ -16,19 +16,23 @@ public class ServletCrearUsuario extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Cookie[] cookies = request.getCookies();
-		
-		if (cookies!= null) {
-			for (Cookie cookie : cookies) {
-				if (cookie.getName().equals("credenciales")) {        
-					response.sendRedirect("crear-usuario.jsp");
-					return;
-				} else {
-					request.getRequestDispatcher("login.jsp").forward(request, response);
-					return;
-				}
-			}
-		}
+		 boolean cookieEncontrada = false;
+		 Cookie[] cookies = request.getCookies();
+
+		    if (cookies != null) {
+		        for (Cookie cookie : cookies) {
+		            if (cookie.getName().equals("credenciales")) {
+		                cookieEncontrada = true;
+		                break;
+		            }
+		        }
+		    }
+		    if (cookieEncontrada) {
+		    	response.sendRedirect("crear-usuario.jsp");
+		    } else {
+		    request.getRequestDispatcher("login.jsp").forward(request, response);
+		    }
+		    
 	}
 
 }

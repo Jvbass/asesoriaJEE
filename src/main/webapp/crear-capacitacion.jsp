@@ -30,7 +30,6 @@
 					<label for="name" class="form-label">Nombre</label>
 						<input placeholder="minimo 8 caracteres, maximo 50" type="text" 
 						class="form-control" 
-						value="${capacitacion.nombre}"
 						id="name" 
 						name="name" />
 					</div>
@@ -39,7 +38,6 @@
 						<input placeholder="minimo 6 caracteres, maximo 50" type="text" 
 						class="form-control" 
 						id="detail" 
-						value="${capacitacion.detalle}"
 						name="detail" />
 					</div>
 

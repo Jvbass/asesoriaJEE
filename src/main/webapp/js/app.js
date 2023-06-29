@@ -3,9 +3,15 @@ $.validator.setDefaults( {
 		      crearCapacitacion();
     }
  });
+ 
+ $.validator.setDefaults( {
+    submitHandler: function () {
+		      editarCapacitacion();
+    }
+ });
 
 $(document).ready(function() {
-  $("#form-crear-capacitacion").validate({
+  $("#form-crear-capacitacion", "#form-editar-capacitacion").validate({
     rules: {
       name: {
         required: true,
@@ -32,8 +38,9 @@ $(document).ready(function() {
       },
      },
   });
-
   $("#date").datepicker();
+  
+  
 });
 
 function crearCapacitacion() {
@@ -49,6 +56,27 @@ function crearCapacitacion() {
     data: $.param({
       nombre: nombre,
       detalle: detalle
+    }),
+    success: function() {
+     window.location.href="ServletListarCapacitaciones"
+    }
+  });
+  
+}
+
+function editarCapacitacion(option) {
+  let id = $("#name").val();
+  let name = $("#name").val();
+  let detail = $("#detail").val();
+    $.ajax({
+    type: "POST",
+    dataType: "html",
+    url: "./ServletCrudCapacitaciones",
+    data: $.param({
+	  id : id,
+      name: name,
+      detail: detail,
+      option: option
     }),
     success: function() {
      window.location.href="ServletListarCapacitaciones"

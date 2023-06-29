@@ -19,19 +19,22 @@ public class ServletCrearCapacitacion extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Cookie[] cookies = request.getCookies();
-		
-		if (cookies!= null) {
-			for (Cookie cookie : cookies) {
-				if (cookie.getName().equals("credenciales")) {        
-					response.sendRedirect("crear-capacitacion.jsp");
-					return;
-				} else {
-					request.getRequestDispatcher("login.jsp").forward(request, response);
-					return;
-				}
-			}
-		}
+		 boolean cookieEncontrada = false;
+		 Cookie[] cookies = request.getCookies();
+
+		    if (cookies != null) {
+		        for (Cookie cookie : cookies) {
+		            if (cookie.getName().equals("credenciales")) {
+		                cookieEncontrada = true;
+		                break;
+		            }
+		        }
+		    }
+		    if (cookieEncontrada) {
+		    	response.sendRedirect("crear-capacitacion.jsp");
+		    } else {
+		    request.getRequestDispatcher("login.jsp").forward(request, response);
+		    }
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
