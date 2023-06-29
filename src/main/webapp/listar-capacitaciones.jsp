@@ -44,7 +44,7 @@
                         <td>
                          <a class="text-success" href="ServletCrudCapacitaciones?option=formUpdateCapacitacion&idCapacitacion=<%=s.getId()%>"><i class="fa-solid fa-pen-to-square mx-3"></i></a>	 
                          
- 						 <a class="text-danger" href="#"><i class="fa-solid fa-trash"></i></a>
+ 						 <a class="text-danger" href="ServletCrudCapacitaciones?option=deleteCapacitacion&idCapacitacion=<%=s.getId()%>"><i class="fa-solid fa-trash"></i></a>
                         </td>
                       </tr>
                       <!-- fin del for de java -->

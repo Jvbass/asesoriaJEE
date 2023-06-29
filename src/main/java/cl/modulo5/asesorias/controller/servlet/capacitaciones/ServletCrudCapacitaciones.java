@@ -27,7 +27,6 @@ public class ServletCrudCapacitaciones extends HttpServlet {
     
     switch(option) {
     
-    
     case "formUpdateCapacitacion" : {
         int idFormCapacitacion = Integer.parseInt(request.getParameter("idCapacitacion"));
         // ingresmos al objeto capacitacion los atributos obtenidos por el controlador
@@ -46,13 +45,36 @@ public class ServletCrudCapacitaciones extends HttpServlet {
         Capacitacion updateCapacitacion = new Capacitacion(id, nombre, detalle);
         // llamar al controlador
         capacitacionController.updateCapacitacion(updateCapacitacion);
-        url = "listar-capacitaciones.jsp";
         
+        url = "listar-capacitaciones.jsp";
         request.setAttribute("capacitaciones", capacitacionController.findAllCapacitaciones());
         
         break;
       }
-  
+    
+    case "saveCapacitacion" : {
+        String nombre = request.getParameter("nombre");
+	    String detalle = request.getParameter("detalle");
+	    
+	    Capacitacion capacitacion = new Capacitacion(0, nombre, detalle);
+		capacitacionController.saveCapacitacion(capacitacion);
+		
+        url = "listar-capacitaciones.jsp";
+		request.setAttribute("capacitaciones", capacitacionController.findAllCapacitaciones());
+        break;
+    }
+    
+    case "deleteCapacitacion" : {
+    	int idDelete = Integer.parseInt(request.getParameter("idCapacitacion"));
+    	capacitacionController.deleteCapacitacionById(idDelete);
+    	
+    	url = "listar-capacitaciones.jsp";
+    	request.setAttribute("capacitaciones", capacitacionController.findAllCapacitaciones());
+        break;
+    }
+    default:
+        break;
+
     }
     
     //enviamos a la url los datos de la request 

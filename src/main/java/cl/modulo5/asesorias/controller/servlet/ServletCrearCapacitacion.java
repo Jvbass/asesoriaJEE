@@ -7,10 +7,10 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/*
 import cl.modulo5.asesorias.controller.CapacitacionController;
 import cl.modulo5.asesorias.model.entity.Capacitacion;
-
+*/
 @WebServlet("/ServletCrearCapacitacion")
 public class ServletCrearCapacitacion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -37,7 +37,7 @@ public class ServletCrearCapacitacion extends HttpServlet {
 		    }
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	/*protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    CapacitacionController capacitacionController = new CapacitacionController();
 	    	    		
 	    String nombre = request.getParameter("nombre");
@@ -49,6 +49,6 @@ public class ServletCrearCapacitacion extends HttpServlet {
 	    
 		capacitacionController.saveCapacitacion(capacitacion);
 
-	}
+	}*/
 
 }

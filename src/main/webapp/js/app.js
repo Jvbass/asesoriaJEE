@@ -39,15 +39,16 @@ function crearCapacitacion() {
 	
   let nombre = $("#name").val();
   let detalle = $("#detail").val();
-
+  let option = $("#option").val();
   
     $.ajax({
     type: "POST",
     dataType: "html",
-    url: "./ServletCrearCapacitacion",
+    url: "./ServletCrudCapacitaciones",
     data: $.param({
       nombre: nombre,
-      detalle: detalle
+      detalle: detalle,
+      option: option
     }),
     success: function() {
      window.location.href="ServletListarCapacitaciones"

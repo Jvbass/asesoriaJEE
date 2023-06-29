@@ -19,9 +19,13 @@ public class CapacitacionController implements ICapacitacionController {
 	}
 
 	@Override
-	public void deleteCapacitacion(int id) {
-		// TODO Auto-generated method stub
-		
+	public void deleteCapacitacionById(int id) {
+	    boolean isDeleted = CapacitacionService.deleteCapacitacionById(id);
+	    if(isDeleted) {
+	        System.out.println("Capacitacion borrada");
+	      } else {
+	        System.out.println("Error al borrar capacitacion");
+	      }
 	}
 
 	@Override

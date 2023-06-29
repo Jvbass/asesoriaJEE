@@ -10,7 +10,6 @@
 
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css">
 
 <link rel="stylesheet" type="text/css" href="./css/styles.css">
 <title>AsesoriasJEE - Crear capacitacion</title>
@@ -40,6 +39,9 @@
 						id="detail" 
 						name="detail" />
 					</div>
+					
+<!-- Input escondido que indica el valor option para que entre al case updateCapacitacion  -->
+						<input id="option" type="hidden" name="option" value="saveCapacitacion">
 
 					<div class="d-grid gap-2">
 						<button type="submit" class="btn btn-danger">Crear</button>

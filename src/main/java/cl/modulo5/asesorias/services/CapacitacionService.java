@@ -102,5 +102,24 @@ public class CapacitacionService {
 		    
 		    return capacitacion;
 	}
+	  
+	  //borramos capacitacion
+	  public static boolean deleteCapacitacionById(int idCapacitacion) {
+		    
+		    DBConnection conexion = DBConnection.getInstance();
+		    String sql = "DELETE FROM capacitaciones WHERE id = ?" ;
+		    
+		    try {
+		      PreparedStatement statement = conexion.getConnection().prepareStatement(sql);
+		      statement.setInt(1, idCapacitacion);
+		      int rowsAffected = statement.executeUpdate();
+		      
+		      return rowsAffected > 0;
+		    } catch (Exception e) {
+		      System.out.println(e.getMessage());
+		      return false;
+		    }
+		     
+		  }
   
 }

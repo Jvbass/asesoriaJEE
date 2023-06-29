@@ -10,7 +10,7 @@ public interface ICapacitacionController {
   // crear capacitacion
   public Capacitacion saveCapacitacion(Capacitacion capacitacion);
   // eliminar capacitacion
-  public void deleteCapacitacion(int id);
+  public void deleteCapacitacionById(int id);
   // actualizar capacitacion
   public Capacitacion updateCapacitacion(Capacitacion capacitacion);
  
