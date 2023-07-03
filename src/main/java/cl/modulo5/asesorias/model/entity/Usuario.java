@@ -12,7 +12,6 @@ public class Usuario{
 	}
 
 	public Usuario(int rut, String nombre, String apellido, String contrasena, String tipo) {
-		super();
 		this.rut = rut;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -66,6 +65,7 @@ public class Usuario{
 				+ ", tipo=" + tipo + "]";
 	}
 
-	
+
+
 	
 }

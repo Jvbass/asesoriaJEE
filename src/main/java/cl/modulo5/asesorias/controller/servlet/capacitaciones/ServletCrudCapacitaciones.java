@@ -23,7 +23,6 @@ public class ServletCrudCapacitaciones extends HttpServlet {
     // creamos la instancia del controlador
     CapacitacionController capacitacionController = new CapacitacionController();
     String url = "index.jsp";
-    //System.out.println(option);
     
     switch(option) {
     
@@ -43,7 +42,7 @@ public class ServletCrudCapacitaciones extends HttpServlet {
         String detalle = request.getParameter("detail");
         
         Capacitacion updateCapacitacion = new Capacitacion(id, nombre, detalle);
-        // llamar al controlador
+        // llamar al controlador con su metodo updateCapacitacion
         capacitacionController.updateCapacitacion(updateCapacitacion);
         
         url = "listar-capacitaciones.jsp";
@@ -74,7 +73,6 @@ public class ServletCrudCapacitaciones extends HttpServlet {
     }
     default:
         break;
-
     }
     
     //enviamos a la url los datos de la request 

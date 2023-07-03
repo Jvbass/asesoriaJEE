@@ -19,9 +19,9 @@ public class Cliente extends Usuario{
 		this.telefono = telefono;
 	}
 
-	@Override
-	public String toString() {
-		return "Cliente [telefono=" + telefono + "]";
-	}
+    @Override
+    public String toString() {
+        return "Cliente [telefono=" + telefono + ", nombre=" + getNombre() + ", apellido=" + getApellido() + ", tipo=" + getTipo() + "]";
+    }
 	
 }

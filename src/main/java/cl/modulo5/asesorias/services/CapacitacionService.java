@@ -12,9 +12,8 @@ public class CapacitacionService {
 
 	  static DBConnection conexion = DBConnection.getInstance();
 	  
-	  //creamos nueva capacitacion
+	  //para nueva capacitacion
 	  public static Capacitacion saveCapacitacion(Capacitacion capacitacion) {
-		    DBConnection conexion = DBConnection.getInstance();
 		    String sql = "INSERT INTO capacitaciones (nombre, detalle) VALUES (?, ?)";
 		    
 		    try {
@@ -33,11 +32,10 @@ public class CapacitacionService {
 		}
 
 	  
-	  //retornamos todas las capacitaciones
-	  public static List<Capacitacion> findAllCapacitaciones() {
-		    
+	  //para retornar todas las capacitaciones
+	  public static List<Capacitacion> findAllCapacitaciones() {   
 		    List<Capacitacion> capacitaciones = new ArrayList<>();
-		    DBConnection conexion = DBConnection.getInstance();
+
 		    String sql = "SELECT * FROM capacitaciones";
 		    
 		    try {
@@ -59,9 +57,8 @@ public class CapacitacionService {
 		    return capacitaciones;
 		  }
 
-	  // retornamos capacitacion por id 
-	  public static Capacitacion findByIdCapacitacion(int id) {
-		    
+	  //para retornar capacitacion por id 
+	  public static Capacitacion findByIdCapacitacion(int id) {    
 		  Capacitacion capacitacion = null;
 		    String sql = "SELECT * FROM capacitaciones WHERE id = ?";
 		    
@@ -85,7 +82,7 @@ public class CapacitacionService {
 		    return capacitacion;
 		  }
 
-	  //actualizamos capacitacion
+	  //para actualizar capacitacion
 	  public static Capacitacion updateCapacitacion(Capacitacion capacitacion) {
 		  String sql = "UPDATE capacitaciones SET nombre = ?, detalle = ? WHERE id = ?";
 		    
@@ -103,10 +100,8 @@ public class CapacitacionService {
 		    return capacitacion;
 	}
 	  
-	  //borramos capacitacion
+	  //para borrar capacitacion
 	  public static boolean deleteCapacitacionById(int idCapacitacion) {
-		    
-		    DBConnection conexion = DBConnection.getInstance();
 		    String sql = "DELETE FROM capacitaciones WHERE id = ?" ;
 		    
 		    try {
